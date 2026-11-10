@@ -3,6 +3,17 @@
 History
 -------
 
+0.5.0 (2026-11-09)
+~~~~~~~~~~~~~~~~~~
+
+* Support Django REST Framework 3.16, 3.17 and 3.18 (latest).
+* Support Django 5.2, 6.0 and 6.1 and Python 3.13 and 3.14.
+* ``DjangoFilterBackend`` implements ``get_schema_operation_parameters``
+  so filters (including all lookups) are documented in DRF's OpenAPI schemas.
+* ``url_filter.integrations.drf_coreapi`` is now legacy: CoreAPI was removed
+  from DRF and the ``coreapi`` package cannot be imported on Python 3.13+.
+* Dropped Django 3.2 (EOL) support.
+
 0.3.15 (2020-02-10)
 ~~~~~~~~~~~~~~~~~~~
 

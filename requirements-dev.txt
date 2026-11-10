@@ -8,6 +8,7 @@ flake8
 flake8-bugbear
 flake8-comprehensions
 importanize
+inflection
 mock
 pdbpp
 pre-commit
@@ -18,6 +19,7 @@ pytest-cov
 pytest-django
 sphinx-autobuild
 sphinx-rtd-theme
-sqlalchemy
+sqlalchemy<2
+uritemplate
 watchdog
 werkzeug
