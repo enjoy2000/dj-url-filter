@@ -8,8 +8,9 @@ Django URL Filter
    :target: http://django-url-filter.readthedocs.io/en/latest/?badge=latest
 .. image:: https://codecov.io/gh/enjoy2000/django-url-filter/branch/master/graph/badge.svg
    :target: https://codecov.io/gh/enjoy2000/django-url-filter
-.. image:: https://img.shields.io/travis/com/enjoy2000/django-url-filter
-   :alt: Travis (.com)
+.. image:: https://github.com/enjoy2000/dj-url-filter/actions/workflows/push.yml/badge.svg
+   :target: https://github.com/enjoy2000/dj-url-filter/actions/workflows/push.yml
+   :alt: Tests
 
 Django URL Filter provides a safe way to filter data via human-friendly URLs.
 
@@ -43,7 +44,7 @@ For example::
 Requirements
 ------------
 
-* Python 3.9+
+* Python 3.12, 3.13, 3.14
 * Django 4.2, 5.2, 6.0, 6.1
 * Django REST Framework 3.16+ (only if you want to use DRF integration)
 * SQLAlchemy ~1.4 (only if you want to use SQLAlchemy integration)
