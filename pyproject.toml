@@ -13,9 +13,6 @@ classifiers = [
     "Framework :: Django :: 6.0",
     "Framework :: Django :: 6.1",
     "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.9",
-    "Programming Language :: Python :: 3.10",
-    "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
     "Programming Language :: Python :: 3.13",
     "Programming Language :: Python :: 3.14",
@@ -24,7 +21,7 @@ classifiers = [
 packages = [{include = "url_filter"}]
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python = "^3.12"
 django = ">=4.2"
 cached-property = "^1.5.2"
 six = "^1.16.0"

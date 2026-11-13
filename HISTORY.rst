@@ -3,6 +3,13 @@
 History
 -------
 
+Unreleased
+~~~~~~~~~~
+
+* Dropped Python 3.9, 3.10 and 3.11 support. Supported Python versions
+  are now the three latest: 3.12, 3.13 and 3.14.
+* Removed obsolete Travis CI and Drone CI configs; GitHub Actions is the CI.
+
 0.5.0 (2026-11-09)
 ~~~~~~~~~~~~~~~~~~
 
