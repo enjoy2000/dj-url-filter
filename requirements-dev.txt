@@ -17,6 +17,7 @@ ptpython
 pytest
 pytest-cov
 pytest-django
+requests
 sphinx-autobuild
 sphinx-rtd-theme
 sqlalchemy<2
