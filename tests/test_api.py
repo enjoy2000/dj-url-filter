@@ -4,7 +4,17 @@ End-to-end tests of the filters through real DRF API endpoints.
 
 Requests go through ``test_project.urls`` (DRF router + viewsets using
 ``url_filter.integrations.drf.DjangoFilterBackend``) against the
-``many_to_one`` fixture:
+``many_to_one`` fixture.
+
+By default requests are made in-process with DRF's ``APIClient``.
+When ``E2E_BASE_URL`` is set (e.g. ``http://127.0.0.1:8000``) the same tests
+run over real HTTP against a running test project server instead, which must
+already have the fixtures loaded::
+
+    python manage.py migrate --run-syncdb
+    python manage.py loaddata one_to_one many_to_one many_to_many
+    python manage.py runserver
+    E2E_BASE_URL=http://127.0.0.1:8000 pytest tests/test_api.py
 
 ====  =====================  ==========  ===============
 id    headline               pub_date    reporter
@@ -17,15 +27,32 @@ id    headline               pub_date    reporter
 
 from __future__ import print_function, unicode_literals
 
+import os
+
 import pytest
 from rest_framework.test import APIClient
 
 ARTICLES = "/many-to-one/articles/"
 REPORTERS = "/many-to-one/reporters/"
+BASE_URL = os.environ.get("E2E_BASE_URL", "").rstrip("/")
+
+
+class LiveServerClient(object):
+    """
+    Minimal ``APIClient``-like client making real HTTP requests to ``BASE_URL``
+    """
+
+    def get(self, path, data=None):
+        import requests
+
+        return requests.get(BASE_URL + path, params=data, timeout=10)
 
 
 @pytest.fixture
-def api(many_to_one):
+def api(request):
+    if BASE_URL:
+        return LiveServerClient()
+    request.getfixturevalue("many_to_one")
     return APIClient()
 
 
