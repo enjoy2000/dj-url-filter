@@ -44,9 +44,9 @@ For example::
 Requirements
 ------------
 
-* Python 3.12, 3.13, 3.14
-* Django 4.2, 5.2, 6.0, 6.1
-* Django REST Framework 3.16+ (only if you want to use DRF integration)
+* Python 3.13, 3.14, 3.15
+* Django 5.2, 6.0, 6.1 (Python 3.15 requires Django 6.1)
+* Django REST Framework 3.18+ (only if you want to use DRF integration)
 * SQLAlchemy ~1.4 (only if you want to use SQLAlchemy integration)
 
 Installing
